@@ -1,0 +1,2581 @@
+[
+    {
+        "id": "698bdcf08b44c5be",
+        "type": "tab",
+        "label": "Sist.Principal",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "dd71821a85164bc6",
+        "type": "tab",
+        "label": "Logica",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7bb1ca101aba5dc2",
+        "type": "tab",
+        "label": "Configuración",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bd363f9b35d5676f",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0a51bbb76f9524d9",
+        "type": "subflow",
+        "name": "Autenticador",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "fbd378d127c485ca"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1080,
+                "y": 200,
+                "wires": [
+                    {
+                        "id": "b352f19e61740149",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1040,
+                "y": 440,
+                "wires": [
+                    {
+                        "id": "a8d02311ad3bec2a",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "usernameEnv",
+                "type": "str",
+                "value": "admin"
+            },
+            {
+                "name": "passwordEnv",
+                "type": "str",
+                "value": "123"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99",
+        "outputLabels": [
+            "Token OK",
+            "No Token"
+        ],
+        "status": {
+            "x": 860,
+            "y": 60,
+            "wires": [
+                {
+                    "id": "4a72d1072d88a04c",
+                    "port": 0
+                },
+                {
+                    "id": "7dfaeecf14f82583",
+                    "port": 0
+                },
+                {
+                    "id": "d6d5e6806db8ba09",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "6f6b2dea9c59a6f1",
+        "type": "subflow",
+        "name": "Status Backend",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 20,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "dce712cf946f5840"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1000,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "1575c47f1227419a",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1040,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "1575c47f1227419a",
+                        "port": 1
+                    },
+                    {
+                        "id": "1575c47f1227419a",
+                        "port": 2
+                    }
+                ]
+            },
+            {
+                "x": 1040,
+                "y": 240,
+                "wires": [
+                    {
+                        "id": "1575c47f1227419a",
+                        "port": 3
+                    }
+                ]
+            },
+            {
+                "x": 1030,
+                "y": 320,
+                "wires": [
+                    {
+                        "id": "1575c47f1227419a",
+                        "port": 4
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99",
+        "outputLabels": [
+            "OK",
+            "Renovar Token",
+            "Desconectado",
+            "Desconocido"
+        ],
+        "status": {
+            "x": 980,
+            "y": 480,
+            "wires": [
+                {
+                    "id": "66a099d9bd31133e",
+                    "port": 0
+                },
+                {
+                    "id": "7f455413f86e9f35",
+                    "port": 0
+                },
+                {
+                    "id": "1575c47f1227419a",
+                    "port": 0
+                },
+                {
+                    "id": "1575c47f1227419a",
+                    "port": 1
+                },
+                {
+                    "id": "1575c47f1227419a",
+                    "port": 2
+                },
+                {
+                    "id": "1575c47f1227419a",
+                    "port": 3
+                },
+                {
+                    "id": "1575c47f1227419a",
+                    "port": 4
+                }
+            ]
+        }
+    },
+    {
+        "id": "4d94a1326bb61b2a",
+        "type": "subflow",
+        "name": "Obtener Token",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 120,
+                "y": 460,
+                "wires": [
+                    {
+                        "id": "f01440a7cd1cc10c"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [
+            {
+                "name": "Username",
+                "type": "str",
+                "value": "admin"
+            },
+            {
+                "name": "Password",
+                "type": "str",
+                "value": "123"
+            },
+            {
+                "name": "Url_base",
+                "type": "str",
+                "value": "http://servicesoa.mooo.com:8080/"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "8af27b7d138b7544",
+        "type": "subflow",
+        "name": "Agregar Historico",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "b3094ebea05a631f"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1320,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "eac6eeb13fe60de7",
+                        "port": 0
+                    },
+                    {
+                        "id": "a4bf9ccb98a8748d",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1220,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "eac6eeb13fe60de7",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "Url_base",
+                "type": "str",
+                "value": "http://servicesoa.mooo.com:8080/"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "b058630992446840",
+        "type": "subflow",
+        "name": "Subflow 1",
+        "info": "",
+        "in": [],
+        "out": []
+    },
+    {
+        "id": "e9445fa4f5a667f6",
+        "type": "subflow",
+        "name": "Dashboards",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 220,
+                "wires": [
+                    {
+                        "id": "7d83a05b8b72176d"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1120,
+                "y": 300,
+                "wires": [
+                    {
+                        "id": "b3987e63b605efcd",
+                        "port": 0
+                    },
+                    {
+                        "id": "29954d75b609d90e",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "Url_base",
+                "type": "str",
+                "value": "http://servicesoa.mooo.com:8080/"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "e8aea52a602961ef",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "eclipse-mosquitto",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "24c10ebb8f16365d",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a2d534a762f95492",
+        "type": "ui_tab",
+        "name": "Grafico",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "4ca3956db57fe0c5",
+        "type": "ui_group",
+        "name": "Barras",
+        "tab": "a2d534a762f95492",
+        "order": 2,
+        "disp": true,
+        "width": "20",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "838c5a8c6dfb59c9",
+        "type": "ui_group",
+        "name": "Tabla",
+        "tab": "a2d534a762f95492",
+        "order": 1,
+        "disp": true,
+        "width": "30",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8bb39f7211ad356d",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "317af48ad813ab54",
+        "type": "ui_group",
+        "name": "Input",
+        "tab": "a2d534a762f95492",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "02d9f0336a5415d6",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "10.147.17.51",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "929602daf43b8229",
+        "type": "function",
+        "z": "0a51bbb76f9524d9",
+        "name": "Prepare Request (login)",
+        "func": "let url=`${msg.url}login-json?username=${msg.username}&password=${msg.password}`\nmsg.url=url;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 80,
+        "wires": [
+            [
+                "c43c488a0cbc8505",
+                "4a72d1072d88a04c"
+            ]
+        ]
+    },
+    {
+        "id": "fbd378d127c485ca",
+        "type": "change",
+        "z": "0a51bbb76f9524d9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "username",
+                "pt": "msg",
+                "to": "usernameEnv",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "password",
+                "pt": "msg",
+                "to": "passwordEnv",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 240,
+        "y": 80,
+        "wires": [
+            [
+                "929602daf43b8229"
+            ]
+        ]
+    },
+    {
+        "id": "c43c488a0cbc8505",
+        "type": "http request",
+        "z": "0a51bbb76f9524d9",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 495,
+        "y": 200,
+        "wires": [
+            [
+                "a8d02311ad3bec2a"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "4a72d1072d88a04c",
+        "type": "change",
+        "z": "0a51bbb76f9524d9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Pidiendo token",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 655,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "a8d02311ad3bec2a",
+        "type": "switch",
+        "z": "0a51bbb76f9524d9",
+        "name": "",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "200",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 650,
+        "y": 220,
+        "wires": [
+            [
+                "f6c5b9a86a7e2cdc",
+                "7dfaeecf14f82583"
+            ],
+            [
+                "d6d5e6806db8ba09"
+            ]
+        ],
+        "outputLabels": [
+            "OK",
+            "No OK"
+        ]
+    },
+    {
+        "id": "f6c5b9a86a7e2cdc",
+        "type": "json",
+        "z": "0a51bbb76f9524d9",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 905,
+        "y": 200,
+        "wires": [
+            [
+                "b352f19e61740149"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "b352f19e61740149",
+        "type": "change",
+        "z": "0a51bbb76f9524d9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.authtoken",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 955,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "7dfaeecf14f82583",
+        "type": "change",
+        "z": "0a51bbb76f9524d9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Token OK",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 745,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "d6d5e6806db8ba09",
+        "type": "change",
+        "z": "0a51bbb76f9524d9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "No Token",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 815,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "dce712cf946f5840",
+        "type": "function",
+        "z": "6f6b2dea9c59a6f1",
+        "name": "Check URL & Token",
+        "func": "let token=msg.token;\nif(!token) {\n    token=\"nada\";\n}\nflow.set(\"token\",token);\n\nlet url=msg.urlBase;\nif (!url) {\n    return [null, {error: \"No se ha definido la urlBase, chequee el archivo config.json\"}];\n}\n\n\nif (url.length > 5 && (url.startsWith(\"http\") || url.startsWith(\"https\"))) {\n    if(!url.endsWith(\"/\")) {\n        url+=\"/\"\n    }\n    flow.set(\"url\", url);\n    return [msg,null];\n}\n\nreturn [null, { error: \"No se ha definido correctamente la urlBase, chequee el archivo config.json\" }];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "bbe39db7c1adf91d"
+            ],
+            [
+                "66a099d9bd31133e"
+            ]
+        ],
+        "outputLabels": [
+            "OK",
+            "Error URL"
+        ]
+    },
+    {
+        "id": "66a099d9bd31133e",
+        "type": "change",
+        "z": "6f6b2dea9c59a6f1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "error",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bbe39db7c1adf91d",
+        "type": "function",
+        "z": "6f6b2dea9c59a6f1",
+        "name": "Prepare request",
+        "func": "msg.url = flow.get(\"url\") +\"auth-info?token=\"+flow.get(\"token\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 80,
+        "wires": [
+            [
+                "bfd2699820ed894b"
+            ]
+        ]
+    },
+    {
+        "id": "bfd2699820ed894b",
+        "type": "http request",
+        "z": "6f6b2dea9c59a6f1",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 525,
+        "y": 80,
+        "wires": [
+            [
+                "7f455413f86e9f35",
+                "1575c47f1227419a"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "7f455413f86e9f35",
+        "type": "change",
+        "z": "6f6b2dea9c59a6f1",
+        "name": "Chequeando token...",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Chequeando token...",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1575c47f1227419a",
+        "type": "function",
+        "z": "6f6b2dea9c59a6f1",
+        "name": "Check Status Code",
+        "func": "if(msg.statusCode==200) {\n    return [{ payload: 'OK', url: flow.get(\"url\")},null,null,null,null];\n} else if (msg.statusCode == 401) {\n    return [null,{ payload: 'No logueado', url:flow.get(\"url\") },  null, null, null];\n} else if (msg.statusCode == 403) {\n    return [null, null, { payload: 'No autorizado',url: flow.get(\"url\") },  null, null];\n} else if (msg.statusCode == 'ECONNREFUSED') {\n    return [null, null, null, { payload: 'Desconectado' }, null];\n} else {\n    return [null, null, null, null, { payload: 'Desconocido' }];\n}\nreturn msg;",
+        "outputs": 5,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 400,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            []
+        ],
+        "outputLabels": [
+            "200",
+            "401",
+            "403",
+            "Desconectado",
+            "Desconocido"
+        ]
+    },
+    {
+        "id": "eb794e19b2db47c7",
+        "type": "file in",
+        "z": "4d94a1326bb61b2a",
+        "name": "",
+        "filename": "/data/config-Token.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 610,
+        "y": 160,
+        "wires": [
+            [
+                "0fc04459e10b6883"
+            ]
+        ]
+    },
+    {
+        "id": "e270d7519ee6b60e",
+        "type": "file",
+        "z": "4d94a1326bb61b2a",
+        "name": "",
+        "filename": "/data/config-Token.json",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 970,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dca08c4d6867946b",
+        "type": "http request",
+        "z": "4d94a1326bb61b2a",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": true,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 730,
+        "y": 320,
+        "wires": [
+            [
+                "e270d7519ee6b60e"
+            ]
+        ]
+    },
+    {
+        "id": "e48495523f44e0d0",
+        "type": "watch",
+        "z": "4d94a1326bb61b2a",
+        "name": "",
+        "files": "/data/config-Token.json",
+        "recursive": "",
+        "x": 180,
+        "y": 240,
+        "wires": [
+            [
+                "5fffed4c8f7ebc86"
+            ]
+        ]
+    },
+    {
+        "id": "7ffe08d3f471724e",
+        "type": "catch",
+        "z": "4d94a1326bb61b2a",
+        "name": "",
+        "scope": [
+            "eb794e19b2db47c7"
+        ],
+        "uncaught": false,
+        "x": 190,
+        "y": 320,
+        "wires": [
+            [
+                "f01440a7cd1cc10c"
+            ]
+        ]
+    },
+    {
+        "id": "5fffed4c8f7ebc86",
+        "type": "delay",
+        "z": "4d94a1326bb61b2a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 410,
+        "y": 240,
+        "wires": [
+            [
+                "eb794e19b2db47c7"
+            ]
+        ]
+    },
+    {
+        "id": "0fc04459e10b6883",
+        "type": "change",
+        "z": "4d94a1326bb61b2a",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "token",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a4f0092d977880e2",
+        "type": "function",
+        "z": "4d94a1326bb61b2a",
+        "name": "",
+        "func": "let url = `${msg.url_base}auth/login-json?username=${msg.user}&password=${msg.pass}`\nmsg.url = url;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 320,
+        "wires": [
+            [
+                "dca08c4d6867946b"
+            ]
+        ]
+    },
+    {
+        "id": "f01440a7cd1cc10c",
+        "type": "change",
+        "z": "4d94a1326bb61b2a",
+        "name": "PrepareRequest",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url_base",
+                "pt": "msg",
+                "to": "Url_base",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "user",
+                "pt": "msg",
+                "to": "Username",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "pass",
+                "pt": "msg",
+                "to": "Password",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 320,
+        "wires": [
+            [
+                "a4f0092d977880e2"
+            ]
+        ]
+    },
+    {
+        "id": "c262730f8caecead",
+        "type": "function",
+        "z": "8af27b7d138b7544",
+        "name": "",
+        "func": "let token = JSON.parse(global.get(\"token\"))\nlet url = `${msg.url_base}historico/add?token=${token.authtoken}`;\nmsg.url = url\nnode.warn(msg.url);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 80,
+        "wires": [
+            [
+                "85857c529a8ec347"
+            ]
+        ]
+    },
+    {
+        "id": "85857c529a8ec347",
+        "type": "http request",
+        "z": "8af27b7d138b7544",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": true,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 890,
+        "y": 80,
+        "wires": [
+            [
+                "eac6eeb13fe60de7"
+            ]
+        ]
+    },
+    {
+        "id": "8b6f9eca269692b4",
+        "type": "template",
+        "z": "8af27b7d138b7544",
+        "name": "Armo peticion (add) body",
+        "field": "req.body",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"fechaHoraRecepcion\":\"\",\n    \"rawData\":{\n        \"temperatura\":\"{{payload.rawData.temperatura}}\",\n        \"humedad\":\"{{payload.rawData.humedad}}\",\n        \"presion\":\"{{payload.rawData.presion}}\"\n    },\n    \"ubicacion\":{\n        \"ciudad\":\"{{payload.ubicacion.ciudad}}\",\n        \"region\":\"{{payload.ubicacion.region}}\",\n        \"pais\":\"{{payload.ubicacion.pais}}\",\n        \"coordenadas\":\"{{payload.ubicacion.coordenadas}}\",\n        \"codigoPostal\":\"{{payload.ubicacion.codigoPostal}}\",\n        \"zonaHoraria\":\"{{payload.ubicacion.zonaHoraria}}\"\n    },\n    \"categoria\":\"{{payload.categoria}}\",\n    \"subCategoria\":\"{{payload.subCategoria}}\",\n    \"identificador\":\"{{payload.identificador}}\",\n    \"puntoRocio\":{{payload.puntoRocio}},\n    \"altitud\":{{payload.altitud}}\n}",
+        "output": "json",
+        "x": 310,
+        "y": 80,
+        "wires": [
+            [
+                "6e8b300fa8915683"
+            ]
+        ]
+    },
+    {
+        "id": "b3094ebea05a631f",
+        "type": "rbe",
+        "z": "8af27b7d138b7544",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload.rawData.temperatura",
+        "topi": "payload.rawData.temperatura",
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "8b6f9eca269692b4"
+            ]
+        ]
+    },
+    {
+        "id": "eac6eeb13fe60de7",
+        "type": "switch",
+        "z": "8af27b7d138b7544",
+        "name": "",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "403",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "403",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1090,
+        "y": 80,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6e8b300fa8915683",
+        "type": "change",
+        "z": "8af27b7d138b7544",
+        "name": "PrepareRequest",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url_base",
+                "pt": "msg",
+                "to": "Url_base",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 80,
+        "wires": [
+            [
+                "c262730f8caecead"
+            ]
+        ]
+    },
+    {
+        "id": "a4bf9ccb98a8748d",
+        "type": "catch",
+        "z": "8af27b7d138b7544",
+        "name": "",
+        "scope": [
+            "c262730f8caecead"
+        ],
+        "uncaught": false,
+        "x": 1210,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a27053ee9e168606",
+        "type": "function",
+        "z": "e9445fa4f5a667f6",
+        "name": "Ultima lectura",
+        "func": "let token = JSON.parse(global.get(\"token\"))\n//let url = `${msg.url_base}historico/last/TK01?token=${token.authtoken}`;\nlet url = `${msg.url_base}historico/last/TK01?token=${token.authtoken}`;\nmsg.url = url\nnode.warn(msg.url);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 260,
+        "wires": [
+            [
+                "34d41dbac90eb542"
+            ]
+        ]
+    },
+    {
+        "id": "34d41dbac90eb542",
+        "type": "http request",
+        "z": "e9445fa4f5a667f6",
+        "name": "Ultima lectura",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": true,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 640,
+        "y": 260,
+        "wires": [
+            [
+                "b3987e63b605efcd"
+            ]
+        ]
+    },
+    {
+        "id": "540a82bb03b78208",
+        "type": "function",
+        "z": "e9445fa4f5a667f6",
+        "name": "Obtener pagina",
+        "func": "let token = JSON.parse(global.get(\"token\"))\n\nif ((global.get('numPag') != undefined || global.get('numPag') != \"\") && (global.get('tamPag') != undefined) || global.get('tamPag') != \"\")\n    var url = `${msg.url_base}historico/order-by-subcategory/casa/habitacion/desc/${global.get('tamPag')}/${global.get('numPag')}?token=${token.authtoken}`;\n\n//let url = `${msg.url_base}historico/last/TK01?token=${token.authtoken}`;\nmsg.url = url\nnode.warn(msg.url);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 320,
+        "wires": [
+            [
+                "e3c3bde36ef7855b"
+            ]
+        ]
+    },
+    {
+        "id": "e3c3bde36ef7855b",
+        "type": "http request",
+        "z": "e9445fa4f5a667f6",
+        "name": "Obtener pagina",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": true,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 640,
+        "y": 320,
+        "wires": [
+            [
+                "01e2a9c046c9d4c9"
+            ]
+        ]
+    },
+    {
+        "id": "194e4a48a883974e",
+        "type": "ui_text_input",
+        "z": "e9445fa4f5a667f6",
+        "name": "",
+        "label": "Numero de Pagina",
+        "tooltip": "",
+        "group": "317af48ad813ab54",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 310,
+        "y": 80,
+        "wires": [
+            [
+                "89e5db99220adb72"
+            ]
+        ]
+    },
+    {
+        "id": "172e4fc2e43dff01",
+        "type": "ui_text_input",
+        "z": "e9445fa4f5a667f6",
+        "name": "",
+        "label": "Tamaño de Pagina",
+        "tooltip": "",
+        "group": "317af48ad813ab54",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 310,
+        "y": 120,
+        "wires": [
+            [
+                "9dc4d716cbcd444a"
+            ]
+        ]
+    },
+    {
+        "id": "01e2a9c046c9d4c9",
+        "type": "function",
+        "z": "e9445fa4f5a667f6",
+        "name": "",
+        "func": "var aux = {\n    'FechaRecepcion':'',\n    'Temperatura':'',\n    'Humedad':'',\n    'Presion':'',\n    'Categoria':'',\n    'SubCategoria':'',\n    'Identificador':'',\n    'Ciudad':'',\n    'Region':'',\n    'Pais':'',\n    'Coordenadas':'',\n    'CodigoPostal':'',\n    'ZonaHoraria':''\n}\n\nvar auxi = new Array(msg.payload.length);\n\nif (msg.payload.fechaHoraRecepcion != undefined){\n    aux.FechaRecepcion = msg.payload.fechaHoraRecepcion;\n    aux.Temperatura = msg.payload.rawData.temperatura;\n    aux.Humedad = msg.payload.rawData.humedad;\n    aux.Presion = msg.payload.rawData.presion;\n    aux.Categoria = msg.payload.categoria;\n    aux.SubCategoria = msg.payload.subCategoria;\n    aux.Identificador = msg.payload.identificador;\n    aux.Ciudad = msg.payload.ubicacion.ciudad;\n    aux.Region = msg.payload.ubicacion.region;\n    aux.Pais = msg.payload.ubicacion.pais;\n    aux.Coordenadas = msg.payload.ubicacion.coordenadas;\n    aux.CodigoPostal = msg.payload.ubicacion.codigoPostal;\n    aux.ZonaHoraria = msg.payload.ubicacion.zonaHoraria;\n\n    msg.payload = aux;\n    return msg;\n}\n\n\nfor(let i = 0;i < msg.payload.length;i++) {\n    aux.FechaRecepcion = msg.payload[i].fechaHoraRecepcion;\n    aux.Temperatura = msg.payload[i].rawData.temperatura;\n    aux.Humedad = msg.payload[i].rawData.humedad;\n    aux.Presion = msg.payload[i].rawData.presion;\n    aux.Categoria = msg.payload[i].categoria;\n    aux.SubCategoria = msg.payload[i].subCategoria;\n    aux.Identificador = msg.payload[i].identificador;\n    aux.Ciudad = msg.payload[i].ubicacion.ciudad;\n    aux.Region = msg.payload[i].ubicacion.region;\n    aux.Pais = msg.payload[i].ubicacion.pais;\n    aux.Coordenadas = msg.payload[i].ubicacion.coordenadas;\n    aux.CodigoPostal = msg.payload[i].ubicacion.codigoPostal;\n    aux.ZonaHoraria = msg.payload[i].ubicacion.zonaHoraria;\n    auxi[i] = JSON.parse(JSON.stringify(aux));\n}\n\nmsg.payload = auxi;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 420,
+        "wires": [
+            [
+                "29954d75b609d90e"
+            ]
+        ]
+    },
+    {
+        "id": "53d40284106bd50a",
+        "type": "ui_table",
+        "z": "e9445fa4f5a667f6",
+        "group": "838c5a8c6dfb59c9",
+        "name": "",
+        "order": 0,
+        "width": "30",
+        "height": "10",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 1190,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "89e5db99220adb72",
+        "type": "change",
+        "z": "e9445fa4f5a667f6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "numPag",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9dc4d716cbcd444a",
+        "type": "change",
+        "z": "e9445fa4f5a667f6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "tamPag",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "76868d25a3a84b77",
+        "type": "function",
+        "z": "e9445fa4f5a667f6",
+        "name": "",
+        "func": "var presion = {};\npresion.topic = 'Presion hPa';\nvar humedad = {};\nhumedad.topic = 'Humedad %';\nvar temperatura = {};\ntemperatura.topic = 'Temperatura °C';\nvar altitud = {};\naltitud.topic = 'Altitud Mts';\nvar puntoDeRocio = {};\npuntoDeRocio.topic = 'Punto De Rocio °C';\n\npresion.payload = msg.payload.rawData.presion;\nhumedad.payload = msg.payload.rawData.humedad;\ntemperatura.payload = msg.payload.rawData.temperatura;\naltitud.payload = msg.payload.altitud\npuntoDeRocio.payload = msg.payload.puntoRocio\n\nreturn [presion, humedad, temperatura, altitud, puntoDeRocio];",
+        "outputs": 5,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 180,
+        "wires": [
+            [
+                "dfd0496f51beaa8d"
+            ],
+            [
+                "dfd0496f51beaa8d"
+            ],
+            [
+                "dfd0496f51beaa8d"
+            ],
+            [
+                "dfd0496f51beaa8d"
+            ],
+            [
+                "dfd0496f51beaa8d"
+            ]
+        ]
+    },
+    {
+        "id": "dfd0496f51beaa8d",
+        "type": "ui_chart",
+        "z": "e9445fa4f5a667f6",
+        "name": "Grafico de barras en tiempo real",
+        "group": "4ca3956db57fe0c5",
+        "order": 0,
+        "width": "20",
+        "height": "5",
+        "label": "",
+        "chartType": "horizontalBar",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "step",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1350,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b3987e63b605efcd",
+        "type": "switch",
+        "z": "e9445fa4f5a667f6",
+        "name": "",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "403",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "403",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 750,
+        "y": 180,
+        "wires": [
+            [],
+            [
+                "76868d25a3a84b77"
+            ]
+        ]
+    },
+    {
+        "id": "29954d75b609d90e",
+        "type": "switch",
+        "z": "e9445fa4f5a667f6",
+        "name": "",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "403",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "403",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 930,
+        "y": 420,
+        "wires": [
+            [],
+            [
+                "53d40284106bd50a"
+            ]
+        ]
+    },
+    {
+        "id": "7d83a05b8b72176d",
+        "type": "change",
+        "z": "e9445fa4f5a667f6",
+        "name": "PrepareRequest",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url_base",
+                "pt": "msg",
+                "to": "Url_base",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 200,
+        "y": 280,
+        "wires": [
+            [
+                "a27053ee9e168606",
+                "540a82bb03b78208"
+            ]
+        ]
+    },
+    {
+        "id": "7de4b7a2e4130353",
+        "type": "mqtt in",
+        "z": "698bdcf08b44c5be",
+        "name": "",
+        "topic": "casa/habitacion/tempHum",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "02d9f0336a5415d6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "cbc83ec7c5495892",
+                "146c73fe49f8276a",
+                "11b1fc5e52db6280"
+            ]
+        ]
+    },
+    {
+        "id": "e35250e9f3b28f3e",
+        "type": "subflow:4d94a1326bb61b2a",
+        "z": "698bdcf08b44c5be",
+        "name": "",
+        "env": [
+            {
+                "name": "Url_base",
+                "value": "http://tomcata:8080/",
+                "type": "str"
+            }
+        ],
+        "x": 1200,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "cbc83ec7c5495892",
+        "type": "subflow:8af27b7d138b7544",
+        "z": "698bdcf08b44c5be",
+        "name": "",
+        "env": [
+            {
+                "name": "Url_base",
+                "value": "http://tomcata:8080/",
+                "type": "str"
+            }
+        ],
+        "x": 450,
+        "y": 80,
+        "wires": [
+            [
+                "e35250e9f3b28f3e",
+                "80f44d5bfc1e3fa9"
+            ],
+            [
+                "80f44d5bfc1e3fa9",
+                "9e46545120461a8f"
+            ]
+        ]
+    },
+    {
+        "id": "146c73fe49f8276a",
+        "type": "debug",
+        "z": "698bdcf08b44c5be",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "80f44d5bfc1e3fa9",
+        "type": "mqtt out",
+        "z": "698bdcf08b44c5be",
+        "name": "",
+        "topic": "casa/habitacion/autenticacion",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "02d9f0336a5415d6",
+        "x": 870,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "d9f06614a9d9f77e",
+        "type": "ui_chart",
+        "z": "698bdcf08b44c5be",
+        "d": true,
+        "name": "Grafico de barras en tiempo real",
+        "group": "4ca3956db57fe0c5",
+        "order": 0,
+        "width": "20",
+        "height": "5",
+        "label": "",
+        "chartType": "horizontalBar",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "step",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 690,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "11b1fc5e52db6280",
+        "type": "template",
+        "z": "698bdcf08b44c5be",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "[{\n    \"Temperatura\":\"{{payload.rawData.temperatura}}\",\n    \"Humedad\":\"{{payload.rawData.humedad}}\",\n    \"Presion\":\"{{payload.rawData.presion}}\",\n    \"Altitud\":\"{{payload.altitud}}\",\n    \"Punto_de_Rocio\":\"{{payload.puntoRocio}}\"\n}]",
+        "output": "json",
+        "x": 140,
+        "y": 360,
+        "wires": [
+            [
+                "03f8a2d0f2f90eb7"
+            ]
+        ]
+    },
+    {
+        "id": "03f8a2d0f2f90eb7",
+        "type": "function",
+        "z": "698bdcf08b44c5be",
+        "name": "",
+        "func": "var presion = {};\npresion.topic = 'Presion hPa';\nvar humedad = {};\nhumedad.topic = 'Humedad %';\nvar temperatura = {};\ntemperatura.topic = 'Temperatura °C';\nvar altitud = {};\naltitud.topic = 'Altitud Mts';\nvar puntoDeRocio = {};\npuntoDeRocio.topic = 'Punto De Rocio °C';\n\npresion.payload = msg.payload[0].Presion\nhumedad.payload = msg.payload[0].Humedad\ntemperatura.payload = msg.payload[0].Temperatura\naltitud.payload = msg.payload[0].Altitud\npuntoDeRocio.payload = msg.payload[0].Punto_de_Rocio\n\nreturn [presion, humedad, temperatura , altitud, puntoDeRocio];",
+        "outputs": 5,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 300,
+        "wires": [
+            [
+                "d9f06614a9d9f77e",
+                "f65369cb5405591b"
+            ],
+            [
+                "d9f06614a9d9f77e",
+                "f65369cb5405591b"
+            ],
+            [
+                "d9f06614a9d9f77e",
+                "f65369cb5405591b"
+            ],
+            [
+                "d9f06614a9d9f77e"
+            ],
+            [
+                "d9f06614a9d9f77e",
+                "f65369cb5405591b"
+            ]
+        ]
+    },
+    {
+        "id": "379efbdee2187811",
+        "type": "inject",
+        "z": "698bdcf08b44c5be",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 440,
+        "wires": [
+            [
+                "9dcc31079e1e69bc"
+            ]
+        ]
+    },
+    {
+        "id": "9e46545120461a8f",
+        "type": "debug",
+        "z": "698bdcf08b44c5be",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "f65369cb5405591b",
+        "type": "debug",
+        "z": "698bdcf08b44c5be",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "9dcc31079e1e69bc",
+        "type": "subflow:e9445fa4f5a667f6",
+        "z": "698bdcf08b44c5be",
+        "name": "Dashboards",
+        "env": [
+            {
+                "name": "Url_base",
+                "value": "http://tomcata:8080/",
+                "type": "str"
+            }
+        ],
+        "x": 650,
+        "y": 440,
+        "wires": [
+            [
+                "e35250e9f3b28f3e"
+            ]
+        ]
+    },
+    {
+        "id": "634946f549635704",
+        "type": "inject",
+        "z": "dd71821a85164bc6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "0bd2115479b72596"
+            ]
+        ]
+    },
+    {
+        "id": "0bd2115479b72596",
+        "type": "change",
+        "z": "dd71821a85164bc6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "urlBase",
+                "pt": "msg",
+                "to": "config.urlBase",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "token",
+                "pt": "msg",
+                "to": "authToken.token",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 120,
+        "wires": [
+            [
+                "8d7b750b1ae3c702",
+                "2a56193319f5decf"
+            ]
+        ]
+    },
+    {
+        "id": "8d7b750b1ae3c702",
+        "type": "debug",
+        "z": "dd71821a85164bc6",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "1736e8dd962c21f1",
+        "type": "link in",
+        "z": "dd71821a85164bc6",
+        "name": "",
+        "links": [
+            "970bdcb35ac5e2df"
+        ],
+        "x": 115,
+        "y": 40,
+        "wires": [
+            [
+                "0bd2115479b72596"
+            ]
+        ]
+    },
+    {
+        "id": "2a56193319f5decf",
+        "type": "subflow:6f6b2dea9c59a6f1",
+        "z": "dd71821a85164bc6",
+        "name": "",
+        "x": 480,
+        "y": 240,
+        "wires": [
+            [
+                "90876354a5c4874b",
+                "8a0f4e41d2c7d67d"
+            ],
+            [
+                "90876354a5c4874b",
+                "b4e0222f7aef0b2a",
+                "8a0f4e41d2c7d67d"
+            ],
+            [
+                "8a0f4e41d2c7d67d"
+            ],
+            [
+                "8a0f4e41d2c7d67d"
+            ]
+        ]
+    },
+    {
+        "id": "90876354a5c4874b",
+        "type": "change",
+        "z": "dd71821a85164bc6",
+        "name": "Fix URL ",
+        "rules": [
+            {
+                "t": "set",
+                "p": "config.urlBase",
+                "pt": "global",
+                "to": "url",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b4e0222f7aef0b2a",
+        "type": "subflow:0a51bbb76f9524d9",
+        "z": "dd71821a85164bc6",
+        "name": "",
+        "x": 770,
+        "y": 260,
+        "wires": [
+            [
+                "2988a55b7ebb78ce",
+                "c2aec24cbb69b760"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2988a55b7ebb78ce",
+        "type": "debug",
+        "z": "dd71821a85164bc6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c2aec24cbb69b760",
+        "type": "function",
+        "z": "dd71821a85164bc6",
+        "name": "Set global token",
+        "func": "let token={\n    ...global.get(\"authToken\"),\n    token:msg.payload\n};\nglobal.set(\"authToken\",token);\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8a0f4e41d2c7d67d",
+        "type": "change",
+        "z": "dd71821a85164bc6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "statusBackend",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dd9f21e27e100000",
+        "type": "function",
+        "z": "dd71821a85164bc6",
+        "name": "Request Productos",
+        "func": "let token = global.get(\"authToken.token\");\nmsg.headers={};\nmsg.headers[\"X-AUTH-TOKEN\"]=token;\nmsg.url=global.get(\"config.urlBase\")+'productos';\nnode.warn(msg.headers)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 560,
+        "wires": [
+            [
+                "8be34c6aa864fe14"
+            ]
+        ]
+    },
+    {
+        "id": "52a1287de6b2310b",
+        "type": "inject",
+        "z": "dd71821a85164bc6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 560,
+        "wires": [
+            [
+                "9842fe5784fe7961"
+            ]
+        ]
+    },
+    {
+        "id": "9842fe5784fe7961",
+        "type": "switch",
+        "z": "dd71821a85164bc6",
+        "name": "",
+        "property": "statusBackend",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "OK",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 330,
+        "y": 560,
+        "wires": [
+            [
+                "dd9f21e27e100000"
+            ]
+        ]
+    },
+    {
+        "id": "8be34c6aa864fe14",
+        "type": "http request",
+        "z": "dd71821a85164bc6",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 690,
+        "y": 560,
+        "wires": [
+            [
+                "eaa22b2446d8c612",
+                "f7a03da5d24fb7dd"
+            ]
+        ]
+    },
+    {
+        "id": "5d748ea21891f709",
+        "type": "ui_table",
+        "z": "dd71821a85164bc6",
+        "group": "",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 1110,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "eaa22b2446d8c612",
+        "type": "switch",
+        "z": "dd71821a85164bc6",
+        "name": "",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 850,
+        "y": 560,
+        "wires": [
+            [
+                "26ee5cb21f1f4dee",
+                "735d796533cbe492"
+            ]
+        ]
+    },
+    {
+        "id": "26ee5cb21f1f4dee",
+        "type": "debug",
+        "z": "dd71821a85164bc6",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "f7a03da5d24fb7dd",
+        "type": "debug",
+        "z": "dd71821a85164bc6",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "735d796533cbe492",
+        "type": "json",
+        "z": "dd71821a85164bc6",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 955,
+        "y": 560,
+        "wires": [
+            [
+                "5d748ea21891f709"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "aeb68f4a3bd340f4",
+        "type": "inject",
+        "z": "7bb1ca101aba5dc2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "6ede2a7dbd56d349"
+            ]
+        ]
+    },
+    {
+        "id": "6ede2a7dbd56d349",
+        "type": "file in",
+        "z": "7bb1ca101aba5dc2",
+        "name": "",
+        "filename": "/data/config.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 320,
+        "y": 240,
+        "wires": [
+            [
+                "efd007146dc9deaa"
+            ]
+        ]
+    },
+    {
+        "id": "efd007146dc9deaa",
+        "type": "json",
+        "z": "7bb1ca101aba5dc2",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 470,
+        "y": 240,
+        "wires": [
+            [
+                "25a5b1858dcd82b5",
+                "58d39464b347fdb1"
+            ]
+        ]
+    },
+    {
+        "id": "25a5b1858dcd82b5",
+        "type": "change",
+        "z": "7bb1ca101aba5dc2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "config",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 240,
+        "wires": [
+            [
+                "aa0120fe1b0478a2"
+            ]
+        ]
+    },
+    {
+        "id": "6cc179598bd70834",
+        "type": "catch",
+        "z": "7bb1ca101aba5dc2",
+        "name": "",
+        "scope": [
+            "6ede2a7dbd56d349"
+        ],
+        "uncaught": false,
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "013decef549a75fd"
+            ]
+        ]
+    },
+    {
+        "id": "013decef549a75fd",
+        "type": "function",
+        "z": "7bb1ca101aba5dc2",
+        "name": "",
+        "func": "msg.payload={\n    urlBase:'http://magm.mooo.com'\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 320,
+        "wires": [
+            [
+                "a90ecb58d250f348"
+            ]
+        ]
+    },
+    {
+        "id": "a90ecb58d250f348",
+        "type": "file",
+        "z": "7bb1ca101aba5dc2",
+        "name": "",
+        "filename": "/data/config.json",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 460,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "722d6b204df0fdb6",
+        "type": "watch",
+        "z": "7bb1ca101aba5dc2",
+        "name": "",
+        "files": "/data/config.json",
+        "recursive": "",
+        "x": 120,
+        "y": 160,
+        "wires": [
+            [
+                "71cb45a3e310024e"
+            ]
+        ]
+    },
+    {
+        "id": "71cb45a3e310024e",
+        "type": "delay",
+        "z": "7bb1ca101aba5dc2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 300,
+        "y": 160,
+        "wires": [
+            [
+                "6ede2a7dbd56d349"
+            ]
+        ]
+    },
+    {
+        "id": "58d39464b347fdb1",
+        "type": "debug",
+        "z": "7bb1ca101aba5dc2",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "aa0120fe1b0478a2",
+        "type": "link out",
+        "z": "7bb1ca101aba5dc2",
+        "name": "Salida Configuración Global",
+        "mode": "link",
+        "links": [
+            "1736e8dd962c21f1"
+        ],
+        "x": 755,
+        "y": 240,
+        "wires": []
+    }
+]
